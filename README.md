@@ -1,3 +1,5 @@
+You can get the boiler package below
+
 # ReduxSimpleStarter
 
 Interested in learning [Redux](https://www.udemy.com/react-redux/)?
