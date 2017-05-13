@@ -10,20 +10,20 @@ class SearchBar extends Component {
         
         this.state = {term :''};
         
-        this.onFormSubmit = this.onFormSubmit.bind(this);
         this.onInputChange = this.onInputChange.bind(this);
+        this.onFormSubmit = this.onFormSubmit.bind(this);
     }
      
      
     
     onInputChange(event) {
-        this.setstate({term : event.target.value});
+        this.setState({term : event.target.value});
     }
         
     onFormSubmit(event) {
         event.preventDefault();
         this.props.fetchWeather(this.state.term);
-        this.setstate({term : ''});
+        this.setState({ term : '' });
     }
         
     
@@ -31,17 +31,14 @@ class SearchBar extends Component {
         return (
             <form onSubmit = {this.onFormSubmit} className = 'input-group'>
              <input
-              placeholder = 'Input city name'
+              placeholder = 'Get a five-day forecast in your favorite cities'
               className = 'form-control'
               value = {this.state.term}
               onChange = {this.onInputChange}
               />
               
              <span className='input-group-btn'>
-              <button
-               type='submit'
-               className = 'btn btn-primary'
-              >Submit</button>
+              <button type='submit' className = 'btn btn-primary'>Find</button>
              </span>
              
             </form>
